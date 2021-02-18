@@ -1,0 +1,83 @@
+﻿@model IEnumerable<United_Youth_Orchestra_with_MVC.Models.Schoolyear>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="color:darkgreen">School Year</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Year6orEarlier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year11)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year13)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Other)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year6orEarlier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year11)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year13)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Other)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" style="color:blue">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id" style="color:green">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" style="color:red">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

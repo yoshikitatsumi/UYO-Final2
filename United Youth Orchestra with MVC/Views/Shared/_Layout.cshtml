@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-icon-180x180.png">
+    <style>
+        .dropbtn {
+            background-color: yellowgreen;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: #4CAF50;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body style="background-color:mintcream">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <div class="logo">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">
+                        <img width="80" height="100" src="~/Images/logo.jpg" alt="">
+                    </a>
+                </div>
+                <a class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img width="120" height="100" src="~/Images/name.jpg" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <partial name="_LoginPartial" />
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="Policy">Our Policy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="NextEvent">Next Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="Gallery">Gallery Music</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="ContactUs">Conract Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Drop down buttons -->
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Member
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a asp-area="" asp-controller="Notice" asp-action="Index">Notice</a>
+                        <a asp-area="" asp-controller="Members" asp-action="Index">Member</a>
+                    </div>
+                </div>
+                <a>
+                    <img width="10" height="80" src="~/Images/separater.jpg" alt="">
+                </a>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Maintenance
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a asp-area="" asp-controller="Instruments" asp-action="Index">Instrument</a>
+                        <a asp-area="" asp-controller="Schoolyears" asp-action="Index">SchoolYear</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <!-- Footer Section Begin -->
+    <footer class="footer-section p-40" style="background-color:white">
+        <div class="container">
+            <div class="row p-37">
+                <div class="col-md-3">
+                    <div>
+                        <div class="logo">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">
+                                <br>
+                                <img width="140" height="240" src="~/Images/Logo2.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-footer">
+                        <br>
+                        <h5>Social Network Site</h5>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/groups/562463730434213/" target="blank">
+                                <i class="fa fa-facebook-square" style="font-size:100px"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="footer-address">
+                        <br>
+                        <h5>Get In Touch</h5>
+
+                        <i class="fa fa-home" style="font-size:17px">　The bandroom, 425 Clyde Street, Hamilton East</i>
+                        <i class="fa fa-mail-forward" style="font-size:17px">　unitedyouthorchestra@gmail.com</i>
+                        <i class="fa fa-mobile-phone" style="font-size:17px;">　 021-136-3547</i>
+                        <p></p>
+                        <h6>Rehearsals: </h6>
+                        <i class="fa fa-music" style="font-size:17px">　Friday: 7pm – 9pm (school term)</i>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row p-20">
+            <div class="col-lg-12 text-center">
+                <div class="copyright">
+                    <br />
+                    Copyright
+                    <i class="fa fa-copyright" style="font-size: 18px;color: #4CAF50;"></i>
+                    <script>document.write(new Date().getFullYear());</script>
+                    All rights reserved | <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    <a asp-area="" asp-controller="Home" asp-action="Policy">
+                        United Youth Orchestra Trust
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

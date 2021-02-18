@@ -1,0 +1,244 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<html>
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    @*<meta charset="utf-8">
+        <title>United Youth Orchestra | Hamilton  | New Zealand</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="css/plugins.css" rel="stylesheet" type="text/css" />
+        <link href="css/style2.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>*@
+
+</head>
+
+<body>
+    <!-- Main photo Section Begin -->
+    <section class="main_photo-section">
+        <div class="container">
+            <div class="row">
+                <div class="container" style="background-image: url(../images/UYOCover.png); width: 1120px; height: 400px;">
+                    <h1 style="color:white">Contact Us</h1>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Main photo Section End -->
+    <!-- Contact Sectiion Begin -->
+    <section class="contact-section">
+        <br>
+        <div class=container>
+            <div class="row text-left">
+
+
+                <div class="col-xl-6">
+                    <h2>Application Form</h2>
+                    <embed width="540" height="800" src="../pdf/UYO Application Form.pdf">
+                </div>
+                <div class="col-xl-6">
+                    <div class="single-team">
+                        <br />
+                        <h3>St Andrews Anglican church</h3>
+                        <div class="membr-pic">
+                            <img width="540" height="370" src="../images/UYOJune2019.jpg">
+                        </div>
+                        <h3>St Matthews Anglican church</h3>
+                        <div class="membr-pic">
+                            <img width="540" height="370" src="../images/UYOSept2019.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    </section>
+    <!-- Contact Sectiion End -->
+
+    @*@model UYO_Final.Models.Email*@
+
+    @*@{
+                ViewData["Title"] = "Contact Us";
+            }
+        =======
+            @model UYO_Final.Models.MailModel
+
+        >>>>>>> 98d552b9e6a89c622c87393d09d4ac638e6ee137
+            <section class="email">
+                <h4>Get Intrested? I'd Love to Hear from You</h4>
+                <hr />
+                <div class="row">
+                    <div class="col-md-8">
+        <<<<<<< HEAD
+                        <form asp-action="ContactUs">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="From" class="custom-control-label" runat="server"></label>
+                                <input asp-for="From" class="form-control" runat="server" />
+                                <span asp-validation-for="From" class="text-danger" runat="server"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="To" class="custom-control-label" runat="server"></label>
+                                <input asp-for="To" class="form-control" runat="server" />
+                                <span asp-validation-for="To" class="text-danger" runat="server"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Subject" class="custom-control-label" runat="server"></label>
+                                <input asp-for="Subject" class="form-control" runat="server" />
+                                <span asp-validation-for="Subject" class="text-danger" runat="server"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Body" class="custom-control-label" runat="server"></label>
+                                <textarea asp-for="Body" class="form-control" rows="3" cols="15" runat="server"></textarea>
+                                <span asp-validation-for="Body" class="text-danger" runat="server"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Send Email" class="btn btn-primary" runat="server" />
+                            </div>
+                            <h5>@ViewBag.message</h5>
+                        </form>
+                    </div>
+                </div>
+            </section>*@
+    @*//Emal Sectiion End*@
+
+    @model UYO_Final.Models.Email
+    @{
+        ViewBag.Title = "Contact Us";
+    }
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h3>Send your comments.</h3>
+        <hr />
+        <div class="form-group">
+            @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FromName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FromEmail)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Message)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Send" />
+            </div>
+        </div>
+    }
+
+    @*<form id="ajax-contact-form" action="#">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" name="name" value="" placeholder="Name *" />
+                    <input type="text" name="email" value="" placeholder="Email *" />
+                    <input type="text" name="subject" value="" placeholder="Subject" />
+                </div>
+                <div class="col-md-6">
+                    <textarea name="message" id="message" placeholder="Message *"></textarea>
+                </div>
+            </div>
+            <input type="submit" class="send_btn" value="Send message">
+        </form>*@
+    =======
+
+    @*<fieldset>
+            <legend>
+                Send Email
+            </legend>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+                <p>From: </p>
+                <p>@Html.TextBoxFor(m => m.From)</p>
+                <p>To: </p>
+                <p>@Html.TextBoxFor(m => m.To)</p>
+                <p>Subject: </p>
+                <p>@Html.TextBoxFor(m => m.Subject)</p>
+                <p>Body: </p>
+                <p>@Html.TextAreaFor(m => m.Body)</p>
+                <input type="submit" value="Send" />
+            }
+        </fieldset>*@
+
+
+    @*<form asp-action="Email">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="From" class="custom-control-label" runat="server"></label>
+                <input asp-for="From" class="form-control" runat="server" />
+                <span asp-validation-for="From" class="text-danger" runat="server"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="To" class="custom-control-label" runat="server"></label>
+                <input asp-for="To" class="form-control" runat="server" />
+                <span asp-validation-for="To" class="text-danger" runat="server"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject" class="custom-control-label" runat="server"></label>
+                <input asp-for="Subject" class="form-control" runat="server" />
+                <span asp-validation-for="Subject" class="text-danger" runat="server"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Body" class="custom-control-label" runat="server"></label>
+                <textarea asp-for="Body" class="form-control" rows="3" cols="15" runat="server"></textarea>
+                <span asp-validation-for="Body" class="text-danger" runat="server"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send Email" class="btn btn-primary" runat="server" />
+            </div>
+            <h5>@ViewBag.message</h5>
+        </form>*@*
+    @*</div>
+    </div>
+    </section>*@
+    <!-- Emal Sectiion End -->
+    @*<div class="contact_form  contact_form_left">
+            <div class="center pb13"><h2>Get Intrested? I'd Love to Hear from You</h2></div>
+            <div id="note"></div>
+            <div id="fields">
+                <form id="ajax-contact-form" action="#">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="name" value="" placeholder="Name *" />
+                            <input type="text" name="email" value="" placeholder="Email *" />
+                            <input type="text" name="subject" value="" placeholder="Subject" />
+                        </div>
+                        <div class="col-md-6">
+                            <textarea name="message" id="message" placeholder="Message *"></textarea>
+                        </div>
+                    </div>
+                    <input type="submit" class="send_btn" value="Send message">
+                </form>
+            </div>
+        </div>*@
+
+
+</body>
+</html>
+
+

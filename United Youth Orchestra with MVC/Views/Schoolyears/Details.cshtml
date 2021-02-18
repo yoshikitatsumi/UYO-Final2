@@ -1,0 +1,72 @@
+﻿@model United_Youth_Orchestra_with_MVC.Models.Schoolyear
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2 style="color:green">Details</h2>
+
+<div>
+    <h4>School Year</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year6orEarlier)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year6orEarlier)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year7)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year7)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year8)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year8)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year9)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year9)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year10)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year10)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year11)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year11)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year12)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year12)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year13)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year13)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
